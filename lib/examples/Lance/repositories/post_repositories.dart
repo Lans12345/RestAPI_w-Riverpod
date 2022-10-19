@@ -6,7 +6,6 @@ import '../model/post_model.dart';
 class PostRepository {
   Future<List<Post>?> getPosts(String url) async {
     var client = http.Client();
-
     var uri = Uri.parse(ApiConfigurationLance().baseUrl + url);
     var response = await client.get(uri);
     if (response.statusCode == 200) {
